@@ -1,4 +1,4 @@
-package com.example.gestordeequipasee;
+package com.example.gestordeequipasee.controller;
 
 import java.io.*;
 
