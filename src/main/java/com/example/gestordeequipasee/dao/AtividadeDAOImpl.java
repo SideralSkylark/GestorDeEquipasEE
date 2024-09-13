@@ -27,7 +27,6 @@ public class AtividadeDAOImpl implements AtividadeDAO {
             stmt.setDate(3, Date.valueOf(atividade.getDataTermino()));
             stmt.setString(4, atividade.getPrioridade().name());
 
-            // Verifique se o status é nulo e defina um padrão se necessário
             String status = (atividade.getStatus() != null) ? atividade.getStatus().name() : Status.EM_ANDAMENTO.name();
             stmt.setString(5, status);
 
@@ -41,17 +40,16 @@ public class AtividadeDAOImpl implements AtividadeDAO {
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    return generatedKeys.getInt(1); // Retorna o ID gerado
+                    return generatedKeys.getInt(1);
                 } else {
                     throw new SQLException("Falha ao obter o ID da nova atividade.");
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return -1; // Retorna um valor indicando falha
+            return -1;
         }
     }
-
 
     @Override
     public void adicionarAtividade(Atividade atividade) {
@@ -63,7 +61,6 @@ public class AtividadeDAOImpl implements AtividadeDAO {
             stmt.setDate(3, Date.valueOf(atividade.getDataTermino()));
             stmt.setString(4, atividade.getPrioridade().name());
 
-            // Verifique se o status é nulo e defina um padrão se necessário
             String status = (atividade.getStatus() != null) ? atividade.getStatus().name() : Status.EM_ANDAMENTO.name();
             stmt.setString(5, status);
 
@@ -168,17 +165,34 @@ public class AtividadeDAOImpl implements AtividadeDAO {
             stmt.setDate(3, Date.valueOf(atividade.getDataTermino()));
             stmt.setString(4, atividade.getPrioridade().name());
             stmt.setString(5, atividade.getStatus().name());
+
             if (atividade.getFuncionario() != null) {
                 stmt.setInt(6, atividade.getFuncionario().getId());
             } else {
                 stmt.setNull(6, Types.INTEGER);
             }
-            stmt.setInt(7, atividade.getId());
 
+            stmt.setInt(7, atividade.getId());
             stmt.executeUpdate();
             System.out.println("Atividade atualizada com sucesso.");
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void editarAtividade(Atividade atividade) throws SQLException {
+        String query = "UPDATE atividade SET descricao = ?, data_inicio = ?, data_termino = ?, prioridade = ?, status = ?, funcionario_id = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = conexao.prepareStatement(query)) {
+            stmt.setString(1, atividade.getDescricao());
+            stmt.setDate(2, Date.valueOf(atividade.getDataInicio()));
+            stmt.setDate(3, Date.valueOf(atividade.getDataTermino()));
+            stmt.setString(4, atividade.getPrioridade().name());
+            stmt.setString(5, atividade.getStatus().name());
+            stmt.setInt(6, atividade.getFuncionario().getId());
+            stmt.setInt(7, atividade.getId());
+            stmt.executeUpdate();
         }
     }
 
@@ -206,7 +220,7 @@ public class AtividadeDAOImpl implements AtividadeDAO {
             if (rowsAffected > 0) {
                 System.out.println("Atividade atribuída ao funcionário com sucesso.");
             } else {
-                System.out.println("Falha ao atribuir atividade ao funcionário. Verifique se a atividade e o funcionário existem.");
+                System.out.println("Falha ao atribuir atividade ao funcionário.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -268,6 +282,39 @@ public class AtividadeDAOImpl implements AtividadeDAO {
         return atividades;
     }
 
+    public List<Atividade> obterAtividadesPorFuncionarioAndamento(int funcionarioId) throws SQLException {
+        String query = "SELECT * FROM atividades WHERE funcionario_id = ? AND status != 'CONCLUIDA'";
+        List<Atividade> atividades = new ArrayList<>();
+        try (PreparedStatement stmt = conexao.prepareStatement(query)) {
+            stmt.setInt(1, funcionarioId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Atividade atividade = new Atividade();
+                atividade.setId(rs.getInt("id"));
+                atividade.setDescricao(rs.getString("descricao"));
+                atividade.setStatus(Status.valueOf(rs.getString("status")));
+                atividades.add(atividade);
+            }
+        }
+        return atividades;
+    }
+
+
+    @Override
+    public void atualizarStatusAtividade(int id, Status novoStatus) {
+        String sql = "UPDATE atividades SET status = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setString(1, novoStatus.name());
+            stmt.setInt(2, id);
+
+            stmt.executeUpdate();
+            System.out.println("Status da atividade atualizado com sucesso.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     private Funcionario obterFuncionarioPorId(int funcionarioId) {
         String sql = "SELECT * FROM funcionarios WHERE id = ?";
         Funcionario funcionario = null;
@@ -282,6 +329,7 @@ public class AtividadeDAOImpl implements AtividadeDAO {
                         rs.getString("nome"),
                         rs.getString("email"),
                         rs.getString("senha"),
+                        rs.getString("cargo"),
                         rs.getBoolean("is_manager")
                 );
             }
@@ -292,18 +340,18 @@ public class AtividadeDAOImpl implements AtividadeDAO {
     }
 
     @Override
-    public void atualizarStatusAtividade(int id, Status novoStatus) {
+    public void marcarComoConcluida(int idAtividade) {
         String sql = "UPDATE atividades SET status = ? WHERE id = ?";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, novoStatus.name());
-            stmt.setInt(2, id);
+            stmt.setString(1, Status.CONCLUIDA.name());
+            stmt.setInt(2, idAtividade);
 
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Status da atividade atualizado para: " + novoStatus);
+                System.out.println("Atividade marcada como concluída com sucesso.");
             } else {
-                System.out.println("Nenhuma atividade encontrada com o ID: " + id);
+                System.out.println("Nenhuma atividade encontrada com o ID fornecido.");
             }
         } catch (SQLException e) {
             e.printStackTrace();

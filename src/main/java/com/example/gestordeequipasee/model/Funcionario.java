@@ -17,6 +17,14 @@ public class Funcionario {
         this.is_manager = is_manager;
     }
 
+    public Funcionario(int id, String nome, String email, String senha, String cargo, boolean isManager) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.is_manager = is_manager;
+    }
+
     public int getId() {
         return id;
     }

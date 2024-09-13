@@ -10,20 +10,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="911f1f83-59ed-45d0-9d80-6d40290334d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/LogInServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/FuncionarioServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/GestorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/MarcarConcluidaServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/RemoverAtividadeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/cadastro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/funcionario.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/logIn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/telaFuncionario.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/utils/PasswordUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/utils/PasswordUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +47,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -40,10 +57,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SideralSkylark&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SideralSkylark/GestorDeEquipasEE.git&quot;,
+    &quot;accountId&quot;: &quot;9e903633-1299-43a3-b0b0-359e712e1750&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -58,30 +87,37 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2lsQR1j9D6H7HMzIR70Jkb503B4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.28.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.GestorDeEquipasEE [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.GestorDeEquipasEE [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.28.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.28" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.28" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
@@ -139,6 +175,15 @@
       <option name="presentableId" value="Default" />
       <updated>1725966294393</updated>
       <workItem from="1725966295544" duration="1200000" />
+      <workItem from="1725990670720" duration="1563000" />
+      <workItem from="1726035135465" duration="30000" />
+      <workItem from="1726064832182" duration="13197000" />
+      <workItem from="1726128070288" duration="565000" />
+      <workItem from="1726144001757" duration="4146000" />
+      <workItem from="1726157573034" duration="241000" />
+      <workItem from="1726158774983" duration="153000" />
+      <workItem from="1726223409984" duration="3650000" />
+      <workItem from="1726234476696" duration="6496000" />
     </task>
     <servers />
   </component>

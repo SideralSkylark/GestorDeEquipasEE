@@ -2,21 +2,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="estilos/logIn.css">
 </head>
 <body>
-    <div class="container">
-        <h1> <%= "Gestor de equipes"%> </h1>
-        <div class="seccao-login">
-            <form action="logar" method="post">
-                <label>Log in</label><br>
-                <label>Usuario:</label>
-                <input type="text" name="usuario"><br>
-                <label>Senha:</label>
-                <input type="password" name="senha"><br>
-                <input type="submit">
-            </form>
+<div class="login-container">
+    <form action="login" method="POST" class="login-form">
+        <h2>Login</h2>
+
+        <div class="input-field">
+            <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
-    </div>
+
+        <div class="input-field">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="options">
+            <label class="remember-me">
+                <input type="checkbox" name="remember"> Lembre-se de mim
+            </label>
+            <a href="#" class="forgot-password">Esqueceu sua senha</a>
+        </div>
+
+        <button type="submit" class="btn-signin">Log in</button>
+
+        <div class="signup-link">
+            <p>Nao tem uma conta? <a href="cadastro.jsp">Cadastro</a></p>
+        </div>
+    </form>
+</div>
 </body>
 </html>

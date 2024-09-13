@@ -13,4 +13,5 @@ public interface FuncionarioDAO  {
     Funcionario buscarFuncionarioPorEmail(String email);
     List<Funcionario> listarNaoGerentes();
     List<Funcionario> listarGerentes();
+    List<Funcionario> obterFuncionariosNaoGerentes() throws SQLException;
 }

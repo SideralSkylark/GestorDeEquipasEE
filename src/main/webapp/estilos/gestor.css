@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Coluna de funcionários */
+.coluna-funcionarios {
+    flex: 1;
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+}
+
+#lista-funcionarios {
+    list-style-type: none;
+    padding: 0;
+}
+
+.funcionario-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.funcionario-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Coluna de atividades */
+.coluna-atividades {
+    flex: 2;
+    padding-left: 20px;
+}
+
+#lista-atividades {
+    list-style-type: none;
+    padding: 0;
+}
+
+.atividade-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.botoes-atividades {
+    margin-top: 20px;
+}
+
+.botoes-atividades button {
+    margin-right: 10px;
+    padding: 10px 20px;
+}

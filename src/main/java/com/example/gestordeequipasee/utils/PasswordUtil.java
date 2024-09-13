@@ -1,4 +1,4 @@
-package com.example.gestaodetarefas.utils;
+package com.example.gestordeequipasee.utils;
 
 import org.mindrot.jbcrypt.BCrypt;
 

@@ -156,4 +156,22 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
         }
         return gerentes;
     }
+
+    @Override
+    public List<Funcionario> obterFuncionariosNaoGerentes() throws SQLException {
+        String query = "SELECT id, nome FROM funcionarios WHERE is_manager = 0";
+        List<Funcionario> funcionarios = new ArrayList<>();
+
+        try (PreparedStatement stmt = conexao.prepareStatement(query)) {
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Funcionario funcionario = new Funcionario();
+                funcionario.setId(rs.getInt("id"));
+                funcionario.setNome(rs.getString("nome"));
+                funcionarios.add(funcionario);
+            }
+        }
+
+        return funcionarios;
+    }
 }
