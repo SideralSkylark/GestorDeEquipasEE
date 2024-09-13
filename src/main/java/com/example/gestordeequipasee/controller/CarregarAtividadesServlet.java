@@ -44,7 +44,7 @@ public class CarregarAtividadesServlet extends HttpServlet {
 
         // Gerar o HTML da lista de atividades
         for (Atividade atividade : atividades) {
-            out.println("<li class='atividade-item' data-id='" + atividade.getId() + "'>");
+            out.println("<li class='atividade-item' data-id='" + atividade.getId() + "' idAtividade='" + atividade.getId() + "'>");
             out.println("<span>Descrição: " + atividade.getDescricao() + "</span>");
             out.println("<span>Status: " + atividade.getStatus() + "</span>");
             out.println("</li>");

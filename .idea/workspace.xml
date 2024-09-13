@@ -10,34 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="911f1f83-59ed-45d0-9d80-6d40290334d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/FuncionarioServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/GestorServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/MarcarConcluidaServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/RemoverAtividadeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cadastro.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/funcionario.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/estilos/logIn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/telaFuncionario.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/FuncionarioDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/model/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/utils/PasswordUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/utils/PasswordUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +162,8 @@
       <workItem from="1726157573034" duration="241000" />
       <workItem from="1726158774983" duration="153000" />
       <workItem from="1726223409984" duration="3650000" />
-      <workItem from="1726234476696" duration="6496000" />
+      <workItem from="1726234476696" duration="6703000" />
+      <workItem from="1726242635717" duration="6442000" />
     </task>
     <servers />
   </component>

@@ -51,6 +51,31 @@
                 <button id="btn-remover" onclick="removerAtividade()" disabled>Remover</button>
             </div>
         </div>
+
+        <!-- Modal para adicionar/editar atividades -->
+        <div id="modal-atividade" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-titulo">Adicionar Atividade</h2>
+                <form id="form-atividade">
+                    <input type="hidden" id="atividade-id" name="id">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" required>
+                    <label for="prioridade">Prioridade:</label>
+                    <select id="prioridade" name="prioridade">
+                        <option value="ALTA">Alta</option>
+                        <option value="MEDIA">Média</option>
+                        <option value="BAIXA">Baixa</option>
+                    </select>
+                    <label for="dataInicio">Data de Início:</label>
+                    <input type="date" id="dataInicio" name="dataInicio" required>
+                    <label for="dataTermino">Data de Término:</label>
+                    <input type="date" id="dataTermino" name="dataTermino" required>
+                    <input type="hidden" id="funcionario-id" name="funcionarioId">
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 </body>

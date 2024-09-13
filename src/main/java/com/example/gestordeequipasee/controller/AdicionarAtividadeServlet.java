@@ -48,7 +48,7 @@ public class AdicionarAtividadeServlet extends HttpServlet {
         atividade.setDataInicio(dataInicio.toLocalDate());
         atividade.setDataTermino(dataTermino.toLocalDate());
         atividade.setPrioridade(Prioridade.valueOf(prioridade));
-        atividade.setStatus(Status.valueOf(status));
+        atividade.setStatus(Status.valueOf("EM_ANDAMENTO"));
         Funcionario funcionario = new Funcionario();
         funcionario.setId(funcionarioId);
         atividade.setFuncionario(funcionario);
