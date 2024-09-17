@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Função para carregar atividades
     function carregarAtividades(funcionarioId) {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', `carregarAtividades?funcionarioId=${funcionarioId}`, true);
@@ -38,119 +39,105 @@ document.addEventListener('DOMContentLoaded', function() {
                 atividadeSelecionada = null;
                 btnEditar.disabled = true;
                 btnRemover.disabled = true;
+
+                // Adicionar evento de clique para cada atividade carregada
+                document.querySelectorAll('.atividade-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        atividadeSelecionada = item.getAttribute('data-id');
+                        btnEditar.disabled = false;
+                        btnRemover.disabled = false;
+                    });
+                });
             }
         };
-
         xhr.send();
     }
 
-    // Função para abrir modal de adicionar atividade
-    window.abrirAdicionarAtividade = function() {
-        modal.style.display = 'block';
-        document.getElementById('modal-titulo').innerText = 'Adicionar Atividade';
-        formAtividade.reset();
-        atividadeIdField.value = '';
-        funcionarioIdField.value = funcionarioSelecionado;
-    }
+    // Abrir o modal para adicionar atividade
+    document.getElementById('btn-adicionar').addEventListener('click', function() {
+        abrirAdicionarAtividade();
+    });
 
-    // Função para abrir modal de editar atividade
-    window.abrirEditarAtividade = function() {
-        if (atividadeSelecionada != null) {
-            modal.style.display = 'block';
-            document.getElementById('modal-titulo').innerText = 'Editar Atividade';
-
-            // Preencher os campos do modal com os dados da atividade selecionada
-            const atividadeItem = document.querySelector(`[data-id="${atividadeSelecionada}"]`);
-
-            if (atividadeItem) {
-                descricaoField.value = atividadeItem.querySelector('.descricao').innerText;
-                prioridadeField.value = atividadeItem.querySelector('.prioridade').innerText;
-                dataInicioField.value = atividadeItem.getAttribute('data-inicio');
-                dataTerminoField.value = atividadeItem.getAttribute('data-termino');
-                atividadeIdField.value = atividadeSelecionada;
-                funcionarioIdField.value = funcionarioSelecionado;
-            } else {
-                alert("Atividade selecionada não encontrada.");
-            }
-        } else {
-            alert("Nenhuma atividade selecionada para edição.");
-        }
-    }
-
-    // Função para remover uma atividade
-    window.removerAtividade = function() {
+    // Abrir o modal para editar atividade
+    document.getElementById('btn-editar').addEventListener('click', function() {
         if (atividadeSelecionada) {
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', `removerAtividade`, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    carregarAtividades(funcionarioSelecionado);
-                }
-            };
-            const params = `id=${atividadeSelecionada}`;
-            xhr.send(params);
-        } else {
-            alert("Nenhuma atividade selecionada para remoção.");
-        }
-    }
-
-    // Função para enviar dados para adicionar uma nova atividade
-    function adicionarAtividade() {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'adicionarAtividade', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                modal.style.display = 'none';
-                carregarAtividades(funcionarioSelecionado);
-            } else {
-                console.error("Erro na requisição:", xhr.status, xhr.responseText);
-            }
-        };
-        const params = `descricao=${descricaoField.value}&prioridade=${prioridadeField.value}&dataInicio=${dataInicioField.value}&dataTermino=${dataTerminoField.value}&funcionarioId=${funcionarioIdField.value}`;
-        xhr.send(params);
-    }
-
-    // Função para enviar dados para editar uma atividade existente
-    function editarAtividade() {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'editarAtividade', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                modal.style.display = 'none';
-                carregarAtividades(funcionarioSelecionado);
-            } else {
-                console.error("Erro na requisição:", xhr.status, xhr.responseText);
-            }
-        };
-        const params = `id=${atividadeIdField.value}&descricao=${descricaoField.value}&prioridade=${prioridadeField.value}&dataInicio=${dataInicioField.value}&dataTermino=${dataTerminoField.value}&funcionarioId=${funcionarioIdField.value}`;
-        xhr.send(params);
-    }
-
-    // Marcar atividade selecionada
-    listaAtividades.addEventListener('click', function(e) {
-        if (e.target && e.target.nodeName === 'LI') {
-            const atividadeId = e.target.getAttribute('data-id');
-            atividadeSelecionada = atividadeId;
-            btnEditar.disabled = false;
-            btnRemover.disabled = false;
+            abrirEditarAtividade(atividadeSelecionada);
         }
     });
 
-    // Fechar modal
+    // Função para abrir o modal de adicionar atividade
+    function abrirAdicionarAtividade() {
+        limparFormulario();
+        modal.style.display = 'block';
+        document.getElementById('modal-titulo').innerText = 'Adicionar Atividade';
+    }
+
+    // Função para abrir o modal de editar atividade
+    function abrirEditarAtividade(atividadeId) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `obterAtividade?id=${atividadeId}`, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const atividade = JSON.parse(xhr.responseText);
+                atividadeIdField.value = atividade.id;
+                descricaoField.value = atividade.descricao;
+                prioridadeField.value = atividade.prioridade;
+                dataInicioField.value = atividade.dataInicio;
+                dataTerminoField.value = atividade.dataTermino;
+                funcionarioIdField.value = atividade.funcionarioId;
+                modal.style.display = 'block';
+                document.getElementById('modal-titulo').innerText = 'Editar Atividade';
+            }
+        };
+        xhr.send();
+    }
+
+    // Fechar o modal
     closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
-    // Submeter o formulário
+    // Enviar o formulário de adicionar/editar atividade
     formAtividade.addEventListener('submit', function(e) {
         e.preventDefault();
-        if (atividadeIdField.value) {
-            editarAtividade();
-        } else {
-            adicionarAtividade();
+        const formData = new FormData(formAtividade);
+        const xhr = new XMLHttpRequest();
+        const url = atividadeIdField.value ? 'editarAtividade' : 'adicionarAtividade';
+        xhr.open('POST', url, true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                modal.style.display = 'none';
+                carregarAtividades(funcionarioSelecionado);
+            }
+        };
+        xhr.send(formData);
+    });
+
+    // Função para limpar o formulário do modal
+    function limparFormulario() {
+        atividadeIdField.value = '';
+        descricaoField.value = '';
+        prioridadeField.value = 'ALTA';
+        dataInicioField.value = '';
+        dataTerminoField.value = '';
+        funcionarioIdField.value = funcionarioSelecionado;
+    }
+
+    // Remover atividade selecionada
+    document.getElementById('btn-remover').addEventListener('click', function() {
+        if (atividadeSelecionada) {
+            if (confirm('Tem certeza que deseja remover esta atividade?')) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', `removerAtividade?id=${atividadeSelecionada}`, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        carregarAtividades(funcionarioSelecionado);
+                    }
+                };
+                xhr.send();
+            }
         }
     });
 });

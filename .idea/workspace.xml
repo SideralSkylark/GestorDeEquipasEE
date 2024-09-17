@@ -10,10 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="911f1f83-59ed-45d0-9d80-6d40290334d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/ObterAtividadeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/AdicionarAtividadeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/CarregarAtividadesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/controller/EditarAtividadeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestordeequipasee/dao/AtividadeDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/estilos/gestor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/gestor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/telaGestor.jsp" afterDir="false" />
@@ -114,6 +115,24 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55220" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -163,7 +182,15 @@
       <workItem from="1726158774983" duration="153000" />
       <workItem from="1726223409984" duration="3650000" />
       <workItem from="1726234476696" duration="6703000" />
-      <workItem from="1726242635717" duration="6442000" />
+      <workItem from="1726242635717" duration="7167000" />
+      <workItem from="1726303667278" duration="75000" />
+      <workItem from="1726384794183" duration="356000" />
+      <workItem from="1726385319786" duration="87000" />
+      <workItem from="1726494097596" duration="3194000" />
+      <workItem from="1726507158911" duration="12000" />
+      <workItem from="1726556204384" duration="6000" />
+      <workItem from="1726589835882" duration="2717000" />
+      <workItem from="1726592584862" duration="2545000" />
     </task>
     <servers />
   </component>

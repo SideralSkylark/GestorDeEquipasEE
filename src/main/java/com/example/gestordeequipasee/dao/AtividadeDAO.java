@@ -13,6 +13,8 @@ public interface AtividadeDAO {
 
     Atividade buscarAtividadePorId(int id);
 
+    Atividade obterAtividadePorId(int id) throws SQLException;
+
     List<Atividade> listarTodasAtividades();
 
     List<Atividade> listarAtividadesPorStatus(String status);

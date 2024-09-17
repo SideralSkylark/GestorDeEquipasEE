@@ -103,6 +103,32 @@ public class AtividadeDAOImpl implements AtividadeDAO {
     }
 
     @Override
+    public Atividade obterAtividadePorId(int id) throws SQLException {
+        String query = "SELECT * FROM atividade WHERE id = ?";
+        Atividade atividade = null;
+
+        try (PreparedStatement stmt = conexao.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                atividade = new Atividade();
+                atividade.setId(rs.getInt("id"));
+                atividade.setDescricao(rs.getString("descricao"));
+                atividade.setDataInicio(rs.getDate("data_inicio").toLocalDate());
+                atividade.setDataTermino(rs.getDate("data_termino").toLocalDate());
+                atividade.setPrioridade(Prioridade.valueOf(rs.getString("prioridade")));
+                atividade.setStatus(Status.valueOf(rs.getString("status")));
+                Funcionario funcionario = new Funcionario();
+                funcionario.setId(rs.getInt("funcionario_id"));
+                atividade.setFuncionario(funcionario);
+            }
+        }
+
+        return atividade;
+    }
+
+    @Override
     public List<Atividade> listarTodasAtividades() {
         String sql = "SELECT * FROM atividades";
         List<Atividade> atividades = new ArrayList<>();
@@ -182,7 +208,7 @@ public class AtividadeDAOImpl implements AtividadeDAO {
 
     @Override
     public void editarAtividade(Atividade atividade) throws SQLException {
-        String query = "UPDATE atividade SET descricao = ?, data_inicio = ?, data_termino = ?, prioridade = ?, status = ?, funcionario_id = ? WHERE id = ?";
+        String query = "UPDATE atividades SET descricao = ?, data_inicio = ?, data_termino = ?, prioridade = ?, status = ?, funcionario_id = ? WHERE id = ?";
 
         try (PreparedStatement stmt = conexao.prepareStatement(query)) {
             stmt.setString(1, atividade.getDescricao());
